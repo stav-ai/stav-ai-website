@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    @apply bg-gray-100;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.text-glow {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.10),
+    0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-flow 8s ease infinite;
+}
+@keyframes gradient-flow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes borderMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate-borderMove {
+    background-size: 200% 200%;
+    animation: borderMove 8s ease infinite;
+}
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.animate-gradientFlow {
+    background-size: 100% 300%;
+    animation: gradientFlow 6s ease-in-out infinite;
+}
