@@ -79,8 +79,8 @@ export function useBlobAnimation(canvasRef) {
             }
             ctx.closePath()
 
-            ctx.globalAlpha = 0.8
-            ctx.filter = 'blur(40px)'
+            // ctx.globalAlpha = 0.8
+            // ctx.filter = 'blur(40px)'
             ctx.fill()
 
             const movementSpeed = window.innerWidth < 768 ? 2 : 4;

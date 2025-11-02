@@ -36,7 +36,7 @@
             ></div>
 
             <div
-                class="relative bg-white rounded-2xl p-6 h-full flex flex-col backdrop-blur-sm"
+                class="relative bg-white rounded-2xl p-6 h-full flex flex-col backdrop-blur-sm "
             >
               <div class="flex items-center mb-5">
                 <img

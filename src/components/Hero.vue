@@ -2,7 +2,10 @@
   <section
       class="relative h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-gradient-to-br from-sky-50 via-blue-50 to-indigo-50"
   >
-    <canvas ref="blobCanvas" class="absolute inset-0 w-full h-full"></canvas>
+    <canvas
+        ref="blobCanvas"
+        class="absolute inset-0 w-full h-full blur-2xl opacity-80"
+    ></canvas>
 
     <div class="relative z-10 text-center text-gray-900 px-4">
       <Motion
@@ -24,7 +27,7 @@
           tag="p"
           :initial="{ opacity: 0, y: 20 }"
           :animate="{ opacity: 1, y: 0 }"
-          :transition="{ duration: 1.5, delay: 0.8 }"
+          :transition="{ duration: 1, delay: 0.5 }"
           class="text-gray-700 text-lg max-w-md mx-auto mb-8"
       >
         Your AI assistant for building permits and smart construction insights.

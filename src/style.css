@@ -68,3 +68,8 @@ main {
     background-size: 100% 300%;
     animation: gradientFlow 6s ease-in-out infinite;
 }
+
+.keep-blur {
+    transform: translateZ(0);
+    will-change: transform;
+}

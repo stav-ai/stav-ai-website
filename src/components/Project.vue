@@ -32,13 +32,13 @@
                      bg-white/30 backdrop-blur-lg border border-white/40
                      text-gray-900 font-semibold text-lg
                      transition-colors duration-300
-                     hover:bg-white/50 hover:border-white/60"
+                     hover:bg-white/50 hover:border-white/60 "
           >
             Try it now!
             <div class="flex items-center justify-center bg-white/30 rounded-full w-10 h-10 ml-3
                         backdrop-blur-lg border border-white/40
                         transition-colors duration-300
-                        group-hover:bg-white/50 group-hover:border-white/60">
+                        group-hover:bg-white/50 group-hover:border-white/60 ">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"/></svg>
             </div>
           </a>

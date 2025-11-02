@@ -54,7 +54,7 @@
                 class="absolute md:relative top-0 left-6 md:left-1/2 -translate-x-1/2 w-10 h-10
                      rounded-full flex items-center justify-center
                      font-semibold text-gray-900 bg-white/60 backdrop-blur-md
-                     border border-white/60 z-10"
+                     border border-white/60 z-10 "
             >
               {{ sprint.id }}
             </div>
