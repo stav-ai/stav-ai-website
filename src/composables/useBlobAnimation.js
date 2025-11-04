@@ -6,12 +6,32 @@ export function useBlobAnimation(canvasRef) {
         if (!canvas) return;
 
         const ctx = canvas.getContext('2d')
+
+        // --- Mouse State ---
+        const mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 }
+
+        // --- Distortion State ---
+        const distortionProps = {
+            base: 300,  // The blob's normal "wobbliness"
+            max: 1000,   // How "wobbly" it gets when excited
+            reactionRadius: 400, // How close the mouse needs to be to have an effect
+            easeFactor: 0.05, // How quickly it calms down / excites
+            current: 300  // The current distortion, which will ease
+        }
+
         const resize = () => {
             canvas.width = window.innerWidth
             canvas.height = window.innerHeight
         }
         resize()
+
+        // --- Event Listeners ---
+        const onMouseMove = (e) => {
+            mouse.x = e.clientX
+            mouse.y = e.clientY
+        }
         window.addEventListener('resize', resize)
+        window.addEventListener('mousemove', onMouseMove)
 
         // Define base colors
         const colors = [
@@ -24,13 +44,29 @@ export function useBlobAnimation(canvasRef) {
         let animationFrameId = null;
 
         function draw() {
-            if (!canvasRef.value) return; // Stop if component is unmounted
+            if (!canvasRef.value) return;
 
             const w = canvas.width
             const h = canvas.height
+            const centerX = w / 2;
+            const centerY = h / 2;
             ctx.clearRect(0, 0, w, h)
 
-            // Smooth 3-color blending
+
+            const dx = mouse.x - centerX
+            const dy = mouse.y - centerY
+            const distance = Math.sqrt(dx * dx + dy * dy)
+
+            const influence = Math.max(
+                0,
+                (distortionProps.reactionRadius - distance) / distortionProps.reactionRadius
+            )
+
+            const targetDistortion = distortionProps.base + (distortionProps.max - distortionProps.base) * influence
+
+            distortionProps.current += (targetDistortion - distortionProps.current) * distortionProps.easeFactor
+
+
             const time = t * 0.002
             const w1 = (Math.sin(time) + 1) / 2
             const w2 = (Math.sin(time + (2 * Math.PI) / 3) + 1) / 2
@@ -48,23 +84,22 @@ export function useBlobAnimation(canvasRef) {
                 colors[0][2] * n1 + colors[1][2] * n2 + colors[2][2] * n3
             const gradientColor = `rgb(${blendedR}, ${blendedG}, ${blendedB})`
 
-            // Radial gradient
             const gradient = ctx.createRadialGradient(
-                w / 2 + Math.sin(t / 300) * 80,
-                h / 2 + Math.cos(t / 350) * 80,
+                centerX + Math.sin(t / 300) * 80,
+                centerY + Math.cos(t / 350) * 80,
                 100,
-                w / 2,
-                h / 2,
+                centerX,
+                centerY,
                 600
             )
             gradient.addColorStop(0, gradientColor)
-            gradient.addColorStop(1, 'rgba(255,255,255,0)')
+            gradient.addColorStop(1, 'rgba(255,255,250,0)')
             ctx.fillStyle = gradient
 
-            // Blob shape
+            // --- Blob Shape ---
             ctx.beginPath()
             const baseRadius = Math.min(w, h) * 0.55
-            const distortion = 300
+            const distortion = distortionProps.current
             const points = 40
             for (let i = 0; i <= points; i++) {
                 const angle = (i / points) * Math.PI * 2
@@ -72,15 +107,12 @@ export function useBlobAnimation(canvasRef) {
                 const r2 = Math.sin(angle * 5 + t / 250) * distortion * 0.3
                 const r3 = Math.sin(angle * 8 + t / 400) * distortion * 0.3
                 const radius = baseRadius + r1 + r2 + r3
-                const x = w / 2 + Math.cos(angle) * radius
-                const y = h / 2 + Math.sin(angle) * radius
+                const x = centerX + Math.cos(angle) * radius
+                const y = centerY + Math.sin(angle) * radius
                 if (i === 0) ctx.moveTo(x, y)
                 else ctx.lineTo(x, y)
             }
             ctx.closePath()
-
-            // ctx.globalAlpha = 0.8
-            // ctx.filter = 'blur(40px)'
             ctx.fill()
 
             const movementSpeed = window.innerWidth < 768 ? 2 : 4;
@@ -93,6 +125,7 @@ export function useBlobAnimation(canvasRef) {
         // Clean up on unmount
         return () => {
             window.removeEventListener('resize', resize);
+            window.removeEventListener('mousemove', onMouseMove); // <-- NEW
             if (animationFrameId) {
                 cancelAnimationFrame(animationFrameId);
             }

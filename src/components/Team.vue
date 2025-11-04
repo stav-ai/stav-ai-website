@@ -1,7 +1,7 @@
 <template>
   <section
       id="team"
-      class="relative py-24 px-6 lg:px-8 min-h-screen flex items-center justify-center bg-gray-100 overflow-hidden pt-32"
+      class="relative min-h-screen bg-gray-100 overflow-hidden pt-32 pb-24 px-6 lg:px-8"
   >
     <div class="relative max-w-6xl mx-auto text-black">
 
