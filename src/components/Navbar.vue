@@ -71,8 +71,4 @@ const {
 </script>
 
 <style scoped>
-
-.absolute {
-  transition: none;
-}
 </style>

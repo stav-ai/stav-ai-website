@@ -27,12 +27,39 @@
           tag="p"
           :initial="{ opacity: 0, y: 20 }"
           :animate="{ opacity: 1, y: 0 }"
-          :transition="{ duration: 1, delay: 0.5 }"
+          :transition="{ duration: 1, delay: 1 }"
           class="text-gray-700 text-lg max-w-md mx-auto mb-8"
       >
         Your AI assistant for building permits and smart construction insights.
       </Motion>
     </div>
+
+    <!-- CTA Button -->
+    <Motion
+        as="div"
+        :initial="{ opacity: 0, y: 20 }"
+        :animate="{ opacity: 1, y: 0, transition: { duration: 1, delay: 2 } }"
+        class="relative inline-block transform-gpu will-change-transform will-change-opacity group"
+    >
+      <a
+          href="#"
+          class="relative z-10 inline-flex items-center justify-center h-12 pl-8 pr-1 rounded-full
+                 bg-white/40 border border-white/50 text-gray-900 font-semibold text-lg
+                 transition-all duration-300 transform-gpu will-change-transform
+                 hover:scale-105 hover:bg-white/60 hover:border-white/70"
+      >
+        Chat now!
+        <div
+            class="flex items-center justify-center bg-white/50 rounded-full w-10 h-10 ml-3
+                   border border-white/50 transition-colors duration-300 group-hover:bg-white/70"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+            <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"/>
+          </svg>
+        </div>
+      </a>
+    </Motion>
+
   </section>
 </template>
 

@@ -5,6 +5,8 @@ import kristianPhoto from '../assets/member.png'
 import patrikPhoto from '../assets/member.png'
 import matejPhoto from '../assets/member.png'
 import tomasPhoto from '../assets/member.png'
+import richardPhoto from '../assets/member.png'
+import michalPhoto from '../assets/member.png'
 
 export function useTeamMembers() {
     const teamMembers = ref([
@@ -52,5 +54,22 @@ export function useTeamMembers() {
         },
     ])
 
-    return { teamMembers }
+    const managers = ref([
+        {
+            name: 'Richard Šárka',
+            position: 'School Project Manager',
+            description:
+                'Richard provides academic guidance and ensures the team’s work aligns with educational standards and goals.',
+            photo: richardPhoto,
+        },
+        {
+            name: 'Michal Stromajer',
+            position: 'UUPV Manager',
+            description:
+                'Michal oversees external collaboration and ensures practical applications align with industry expectations.',
+            photo: michalPhoto,
+        },
+    ])
+
+    return { teamMembers, managers }
 }
