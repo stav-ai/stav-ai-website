@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin '@tailwindcss/typography';
 
 html {
     scroll-behavior: smooth;
@@ -73,3 +74,12 @@ html {
     overflow-y: scroll;
 }
 
+.modal-open-lock {
+    /*IOS is different :)*/
+    overflow: hidden !important;
+    position: fixed !important;
+    width: 100% !important;
+    height: 100% !important;
+    -webkit-overflow-scrolling: auto !important;
+    touch-action: none !important;
+}

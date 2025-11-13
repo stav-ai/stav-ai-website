@@ -4,7 +4,6 @@
       class="relative min-h-screen bg-gray-100 overflow-hidden pt-32 pb-24 px-6 lg:px-8"
   >
     <div class="max-w-6xl mx-auto relative px-6">
-      <!-- Title -->
       <Motion
           tag="h2"
           :initial="{ opacity: 0, y: 40 }"
@@ -14,14 +13,12 @@
         Project Timeline
       </Motion>
 
-      <!-- Static glowing gradient background -->
       <div
           class="absolute top-20 bottom-0 w-16 md:w-24 opacity-30
                bg-gradient-to-b from-sky-400 via-blue-500 to-violet-500
                left-12 md:left-1/2 md:-translate-x-1/2 rounded-full blur-3xl pointer-events-none"
       ></div>
 
-      <!-- Animated vertical line -->
       <Motion
           as="div"
           :initial="{ scaleY: 0 }"
@@ -32,7 +29,6 @@
                origin-top rounded-full transform-gpu will-change-transform"
       ></Motion>
 
-      <!-- Timeline cards -->
       <div class="relative flex flex-col gap-20">
         <div
             v-for="(sprint, index) in sprints"
@@ -63,9 +59,24 @@
                 'md:mr-auto': index % 2 === 0,
               }"
             >
-              <h3 class="text-lg font-semibold text-blue-700 mb-2">
-                {{ sprint.title }}
-              </h3>
+              <div class="flex items-start justify-between mb-2">
+                <h3 class="text-lg font-semibold text-blue-700">
+                  {{ sprint.title }}
+                </h3>
+
+                <button
+                    @click="openInfo(sprint.filename)"
+                    class="text-gray-600 hover:text-blue-700 transition-colors cursor-pointer pl-2"
+                    aria-label="More info"
+                >
+                  <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                       viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                  </svg>
+                </button>
+              </div>
+
               <p class="text-gray-700 text-sm leading-relaxed">
                 {{ sprint.description }}
               </p>
@@ -74,11 +85,33 @@
         </div>
       </div>
     </div>
+
+    <SprintInfoModal
+        :isOpen="isModalOpen"
+        :content="content"
+        :isLoading="isLoading"
+        @close="isModalOpen = false"
+    />
   </section>
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import { Motion } from '@oku-ui/motion'
 import { useSprints } from '../composables/useTimeline'
+import SprintInfoModal from '../components/SprintInfoModal.vue'
+import { useSprintInfo } from '../composables/useSprintInfo'
+
 const { sprints } = useSprints()
+
+// State and logic for the modal
+const isModalOpen = ref(false)
+const { content, isLoading, loadSprintInfo } = useSprintInfo()
+
+const openInfo = async (filename) => {
+  // Load the sprint information based on the filename
+  await loadSprintInfo(filename)
+  // Open the modal
+  isModalOpen.value = true
+}
 </script>

@@ -56,7 +56,7 @@ export function useTeamMembers() {
 
     const managers = ref([
         {
-            name: 'Richard Šárka',
+            name: 'Richard Szarka',
             position: 'School Project Manager',
             description:
                 'Richard provides academic guidance and ensures the team’s work aligns with educational standards and goals.',
