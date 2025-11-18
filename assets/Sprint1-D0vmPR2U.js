@@ -1,6 +1,6 @@
 const n=`# S1 - Initial Setup
 
-📆 Date: 11.9.2025 - 25.9.2025
+📆 Date: 8.10.2025 - 22.10.2025
 
 ## 🎯 Goals / Tasks
 - Setup environment and project base structure
