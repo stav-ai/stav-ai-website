@@ -1,43 +1,51 @@
 # S1 - Initial Setup
 
-📆 Date: 8.10.2025 - 22.10.2025
+📆 Date: 8.10.2025 – 22.10.2025
 
 ## 🎯 Goals / Tasks
-- Setup environment and project base structure
-- Initialize Git repository & CI/CD pipeline
-- Define coding standards and architecture
+
+* Introduce team members and project managers
+* Provide a high-level overview of the project vision and expected outputs
+* Set up all required accounts and access permissions
+* Configure Jira, MS Teams, GitLab, VPN, and other essential tools
+* Perform initial environment setup and prepare base project structure
 
 ---
 
 ## ✅ Deliverables
-- Project skeleton ready
-- Continuous integration configured
-- Base components and folder structure established
+
+* All team members onboarded and granted access to required systems
+* Communication channels and workflows established
+* Jira project space prepared (boards, epics, workflows)
+* GitLab repository created and connected
+* Initial project skeleton and folder structure prepared
 
 ---
 
 ## 📝 Notes
-- Some tasks from initial plan were postponed due to dependency issues.
-- Added extra documentation for onboarding new developers.
-- AI Team worked on initial model architecture.
-- Web Team prepared reusable UI components.
+
+* Some access requests required additional approvals, causing minor delays.
+* Extra documentation was created to guide new members through environment setup.
+* Teams aligned on initial expectations and responsibilities.
+* First basic look into the project scope and functional requirements was completed.
 
 ---
 
 ## 👥 Team Contributions
 
 **AI Team** <span style="background-color:#8ec5ff; padding:2px 4px; border-radius:4px;">🧠 AI</span>
-- Initial model design completed
-- Data preprocessing scripts prepared
+
+* Reviewed high-level requirements to understand upcoming model needs
+* Prepared environment for future data processing and experimentation
 
 **Web Team** <span style="background-color:#a3b3ff; padding:2px 4px; border-radius:4px;">💻 WEB</span>
-- UI skeleton implemented
-- CI/CD pipeline tested
+
+* Set up UI project base and validated GitLab workflow
+* Helped configure CI/CD basics and repository structure
 
 ---
 
 ## ⚠️ Blockers / Improvements
-- Delay in setting up cloud environment slowed initial testing.
-- Next sprint: focus on integrating AI model with Web front-end.
 
-
+* VPN and cloud access setup took longer than expected for several team members
+* Next sprint: begin functional development and connect early components across teams

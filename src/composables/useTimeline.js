@@ -4,24 +4,27 @@ export function useSprints() {
     const sprints = ref([
         {
             id: 1,
-            title: 'Foundation & Analysis',
+            title: 'Initial Setup & Onboarding',
             description:
-                'Mapped the problem space, researched existing solutions, and collected foundational data from legal and public sources.',
+                'Introduced the team, set up all required accounts and tools, and prepared the initial project environment and structure.',
             filename: 'Sprint1'
+
         },
         {
             id: 2,
-            title: 'Model Prototyping & UI',
+            title: 'Architecture & Research',
             description:
-                'Built, trained, and tested the first model while designing and implementing the initial chatbot user interface.',
+                'Finalized the tech stack, designed the AI safety pipeline, implemented the first data crawler, and defined core architecture decisions for the web and LLM systems.',
             filename: 'Sprint2'
+
         },
         {
             id: 3,
-            title: 'Team Section',
+            title: 'Web Implementation Setup',
             description:
-                'Developed a responsive, animated team showcase section for the landing page.',
+                'Set up the full Laravel–React–Tailwind stack, integrated the ID-SK government design system, and prepared the foundation for the upcoming layout implementation.',
             filename: 'Sprint3'
+
         },
         {
             id: 4,

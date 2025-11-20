@@ -69,10 +69,10 @@
                     class="text-gray-600 hover:text-blue-700 transition-colors cursor-pointer pl-2"
                     aria-label="More info"
                 >
-                  <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none"
                        viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                          d="M8 4H4m0 0v4m0-4 5 5m7-5h4m0 0v4m0-4-5 5M8 20H4m0 0v-4m0 4 5-5m7 5h4m0 0v-4m0 4-5-5" />
                   </svg>
                 </button>
               </div>
