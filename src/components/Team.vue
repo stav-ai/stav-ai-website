@@ -37,7 +37,7 @@
             <img
                 :src="member.photo"
                 :alt="member.name"
-                class="w-40 h-40 object-contain absolute -top-20 left-1/2 transform -translate-x-1/2 rounded-xl drop-shadow-md"
+                class=" h-32 object-contain absolute -top-16 left-1/2 transform -translate-x-1/2 drop-shadow-md"
                 loading="lazy"
             />
           </div>
@@ -81,7 +81,7 @@
               <img
                   :src="manager.photo"
                   :alt="manager.name"
-                  class="w-40 h-40 object-contain absolute -top-20 left-1/2 transform -translate-x-1/2 rounded-xl drop-shadow-md"
+                  class="w-32 h-32 object-contain absolute -top-16 left-1/2 transform -translate-x-1/2 drop-shadow-md"
                   loading="lazy"
               />
             </div>

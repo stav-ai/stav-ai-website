@@ -1,12 +1,12 @@
 import { ref } from 'vue'
-import samuelPhoto from '../assets/member.png'
-import rastislavPhoto from '../assets/member.png'
-import kristianPhoto from '../assets/member.png'
-import patrikPhoto from '../assets/member.png'
-import matejPhoto from '../assets/member.png'
-import tomasPhoto from '../assets/member.png'
-import richardPhoto from '../assets/member.png'
-import michalPhoto from '../assets/member.png'
+import samuelPhoto from '../assets/members/Samuel.png'
+import rastislavPhoto from '../assets/members/Rasto.png'
+import kristianPhoto from '../assets/members/Kristian.png'
+import patrikPhoto from '../assets/members/Patrik.png'
+import matejPhoto from '../assets/members/Matej.png'
+import tomasPhoto from '../assets/members/Tomas.png'
+import richardPhoto from '../assets/members/Richard.png'
+import michalPhoto from '../assets/members/Michal.png'
 
 export function useTeamMembers() {
     const teamMembers = ref([

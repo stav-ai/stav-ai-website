@@ -28,10 +28,11 @@ export function useSprints() {
         },
         {
             id: 4,
-            title: 'Backend Link',
+            title: 'First Web–AI POC Integration',
             description:
-                'Integrated backend endpoints and established the initial API structure.',
+                'Implemented the full chat UI, connected the web app with the AI API including authentication, and published both the web and AI model projects to the official UUPV GitLab repositories.',
             filename: 'Sprint4'
+
         },
         {
             id: 5,
