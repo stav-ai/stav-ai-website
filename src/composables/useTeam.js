@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 import samuelPhoto from '../assets/members/Samuel.png'
-import rastislavPhoto from '../assets/members/Rasto.png'
+import rastislavPhoto from '../assets/members/Rastislav.png'
 import kristianPhoto from '../assets/members/Kristian.png'
 import patrikPhoto from '../assets/members/Patrik.png'
 import matejPhoto from '../assets/members/Matej.png'
