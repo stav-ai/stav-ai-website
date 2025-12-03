@@ -11,25 +11,11 @@ import michalPhoto from '../assets/members/Michal.png'
 export function useTeamMembers() {
     const teamMembers = ref([
         {
-            name: 'Samuel Nagy',
-            position: 'Frontend Developer + UX',
+            name: 'Tomáš Drga',
+            position: 'Full-stack Developer',
             description:
-                'Samuel crafts seamless and engaging user experiences, blending clean design with performance-focused frontends.',
-            photo: samuelPhoto,
-        },
-        {
-            name: 'Rastislav Pašek',
-            position: 'AI Engineer',
-            description:
-                'Rastislav transforms complex data into intelligent systems, driving innovation through practical AI applications.',
-            photo: rastislavPhoto,
-        },
-        {
-            name: 'Kristián Červenka',
-            position: 'AI Engineer',
-            description:
-                'Kristián focuses on model optimization and automation, making AI solutions faster, smarter, and more reliable.',
-            photo: kristianPhoto,
+                'Tomáš builds scalable systems and robust APIs, keeping the technical backbone efficient and future-ready.',
+            photo: tomasPhoto,
         },
         {
             name: 'Patrik Drdák',
@@ -46,11 +32,25 @@ export function useTeamMembers() {
             photo: matejPhoto,
         },
         {
-            name: 'Tomáš Drga',
-            position: 'Full-stack Developer',
+            name: 'Rastislav Pašek',
+            position: 'AI Engineer',
             description:
-                'Tomáš builds scalable systems and robust APIs, keeping the technical backbone efficient and future-ready.',
-            photo: tomasPhoto,
+                'Rastislav transforms complex data into intelligent systems, driving innovation through practical AI applications.',
+            photo: rastislavPhoto,
+        },
+        {
+            name: 'Samuel Nagy',
+            position: 'Frontend Developer + UX',
+            description:
+                'Samuel crafts seamless and engaging user experiences, blending clean design with performance-focused frontends.',
+            photo: samuelPhoto,
+        },
+        {
+            name: 'Kristián Červenka',
+            position: 'AI Engineer',
+            description:
+                'Kristián focuses on model optimization and automation, making AI solutions faster, smarter, and more reliable.',
+            photo: kristianPhoto,
         },
     ])
 
@@ -63,7 +63,7 @@ export function useTeamMembers() {
             photo: richardPhoto,
         },
         {
-            name: 'Michal Stromajer',
+            name: 'Michal Štromajer',
             position: 'UUPV Manager',
             description:
                 'Michal oversees external collaboration and ensures practical applications align with industry expectations.',
