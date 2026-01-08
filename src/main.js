@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 import './style.css'
 
@@ -17,13 +17,18 @@ const routes = [
     { path: '/technology', component: Technology },
     { path: '/timeline', component: Timeline },
 ]
-
-
 const router = createRouter({
-    history: createWebHashHistory(),
+    history: createWebHistory('/stav-ai-website/'),
     routes,
+    scrollBehavior(to, from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition;
+        } else if (to.path !== from.path) {
+            return { top: 0 };
+        }
+        return false;
+    },
 })
-
 const app = createApp(App)
 
 app.use(router)

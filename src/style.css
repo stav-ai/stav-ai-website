@@ -3,10 +3,16 @@
 
 html {
     scroll-behavior: smooth;
+    cursor: none !important;
 }
 
 body {
     @apply bg-gray-100;
+    cursor: none !important;
+}
+
+a, button, .clickable-class {
+    cursor: none !important;
 }
 
 main {
@@ -70,14 +76,8 @@ main {
     animation: gradientFlow 6s ease-in-out infinite;
 }
 
-html {
-    overflow-y: scroll;
-}
-
 .modal-open-lock {
-    /*IOS is different :)*/
     overflow: hidden !important;
-    position: fixed !important;
     width: 100% !important;
     height: 100% !important;
     -webkit-overflow-scrolling: auto !important;

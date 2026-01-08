@@ -65,6 +65,7 @@
                 </h3>
 
                 <button
+                    type="button"
                     @click="openInfo(sprint.filename)"
                     class="text-gray-600 hover:text-blue-700 transition-colors cursor-pointer pl-2"
                     aria-label="More info"

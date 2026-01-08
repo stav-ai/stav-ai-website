@@ -1,6 +1,5 @@
 <template>
-  <Navbar />
-
+  <CustomCursor /> <Navbar />
   <main>
     <router-view v-slot="{ Component }">
       <component :is="Component" />
@@ -9,20 +8,8 @@
 </template>
 
 <script setup>
-import { RouterView, useRoute } from 'vue-router'
-import { watch } from 'vue'
 import { Motion } from '@oku-ui/motion'
+import CustomCursor from './components/CustomCursor.vue'
 import Navbar from './components/Navbar.vue'
-
-const route = useRoute()
-
-watch(
-    () => route.path,
-    () => {
-      setTimeout(() => {
-        window.scrollTo(0, 0)
-      }, 1)
-    }
-)
 </script>
 

@@ -7,6 +7,7 @@ export function useSprintInfo() {
     const loadSprintInfo = async (filename) => {
         try {
             isLoading.value = true
+            content.value = ''
             const module = await import(`../data/sprint-info/${filename}.md?raw`)
             content.value = module.default
         } catch (err) {
