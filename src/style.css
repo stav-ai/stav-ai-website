@@ -3,16 +3,17 @@
 
 html {
     scroll-behavior: smooth;
-    cursor: none !important;
 }
 
 body {
     @apply bg-gray-100;
-    cursor: none !important;
+    cursor: url('/src/assets/cursor-default.png') 16 16 , auto;
+    transition: cursor 0.5s ease;
 }
 
 a, button, .clickable-class {
-    cursor: none !important;
+    cursor: url('/src/assets/cursor-pointer.png') 16 16, pointer;
+    transition: cursor 0.5s ease;
 }
 
 main {
